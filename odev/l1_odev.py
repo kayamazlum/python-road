@@ -1,43 +1,46 @@
-def yazdir(x):
-    print("Sonuç =", x)
+def welcomeMessage():
+    print(""" 
+    Welcome dear user, to use the calculator we need some numbers. 
+    1. Addition
+    2. Multipy
+    3. Substract
+    4. Division
+    """)
 
-def toplama(a, b):
-    yazdir(a + b)
+def add(a, b):
+    displayResult((a+b))
 
-def cikarma(a, b):
-    yazdir(a - b)
+def div(a, b):
+    displayResult((a/b))
 
-def carpma(a, b):
-    yazdir(a * b)
+def sub(a, b):
+    displayResult((a-b))
 
-def bolme(a, b):
-    if b == 0:
-        print("Bir sayı sıfıra bölünemez!")
-    else:
-        yazdir(a / b)
+def mul(a, b):
+    displayResult((a*b))
 
-while True:
-    print("""Bir işlem seçiniz.
-    Toplama (1)
-    Çıkarma (2)
-    Çarpma (3)
-    Bölme (4)
-    Çıkış yapmak için herhangi bir tuşa basınız.
-""")
-    islem = input()
-    
-    if islem in ["1", "2", "3", "4"]:
-        s1 = int(input("Sayı 1: "))
-        s2 = int(input("Sayı 2: "))
+def displayResult(op):
+    print("Result : ", op)
 
-        if islem == "1":
-            toplama(s1, s2)
-        elif islem == "2":
-            cikarma(s1, s2)
-        elif islem == "3":
-            carpma(s1, s2)
-        elif islem == "4":
-            bolme(s1, s2)
-    else:
-        print("Çıkış yapıldı..")
-        break
+def mainLoop():
+    while True:
+        oparant = str(input('Choose an operation: '))
+        num1 = int(input('Enter a number: '))
+        num2 = int(input('Enter the secon number: '))
+
+        if oparant =='1': 
+            add(num1, num2)    
+        if oparant =='2': 
+            mul(num1, num2)    
+        if oparant =='3': 
+            sub((num1-num2))
+        if oparant =='4': 
+            div(num1, num2)
+
+
+# Workflow
+#1. Greeding tthe user
+welcomeMessage()
+
+#2. Starting the main loop
+mainLoop()
