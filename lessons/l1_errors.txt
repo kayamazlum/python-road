@@ -1,0 +1,5 @@
+Ekrana bir þeyler yazýyor.1.Kullanýcý sayfaya geldi.
+Email:  aaa
+Password 323
+Email ve Password girildi.
+Submit butonuna bastý
